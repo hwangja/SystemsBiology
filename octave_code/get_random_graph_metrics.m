@@ -1,0 +1,29 @@
+function [Edges, Wedges, Triangles, Arrows, Buckets, Nooses, Quadrangles, Pentagons] = get_random_graph_metrics(A)
+	Edges = 0;
+	Wedges = 0;
+	Triangles = 0;
+	Arrows = 0;
+	Buckets = 0;
+	Nooses = 0;
+	Quadrangles = 0;
+	Pentagons = 0;
+	for i = 1:10
+		g1 = make_random_graph(A);
+		Edges += get_number_of_edges(g1);
+		Wedges += get_number_of_wedges(g1);
+		Triangles += get_number_of_triangles(g1);
+		Arrows += get_number_of_arrows(g1);
+		Buckets += get_number_of_buckets(g1);
+		Nooses += get_number_of_nooses(g1);
+		Quadrangles += get_number_of_quadrangles(g1);
+		Pentagons += get_number_of_pentagons(g1);
+	end	
+	Edges /= 10;
+	Wedges /= 10;
+	Triangles /= 10;
+	Arrows /= 10;
+	Buckets /= 10;
+	Nooses /= 10;
+	Quadrangles /= 10;
+	Pentagons /= 10;
+endfunction
